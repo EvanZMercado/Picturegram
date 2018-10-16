@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Picturegram</title>
+
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		body {
+			background: linear-gradient(45deg,red,black);
+		}
+
+		h1{
+			color:blue;
+		font-family: "Savoye LET";
+		font-weight: auto;
+		font-size: 70px;
+		margin-bottom: 0px;
+		}
+
+		h4{
+			color:blue;
+		font-family: "Savoye LET";
+		font-weight: auto;
+		font-size: 30px;
+		margin-top: 0px;
+		}
+
+		img;hover {
+			border: 2px solid red;
+			cursor: pointer;
+
+		}
+		
+		#content {
+			width: 550px;
+			margin: auto;
+		}
+		#mainpic {
+					width: calc(100%);
+					height: auto;
+					margin: 5px;
+					border: solid blue;
+						
+		}
+
+		.smallpic {
+					width: calc(33.333333% - 13px);
+					height:auto;
+					margin: 5px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="content">
+
+	<h1>Picturegram</h1>
+	 <h4><a href="https://www.instagram.com/__t.h.i.n.k__/">@__t.h.i.n.k__</a></h4>
+
+	<img src="Darkness.jpg" id="mainpic">
+	<img src="Grain.jpg"class="smallpic">
+	<img src="Pier.jpg" class="smallpic">
+	<img src="think.jpg" class="smallpic">
+	<img src="Trippy.jpg"class="smallpic">
+	</div>
+
+	<script type="text/javascript">
+		const bigImage = document.querySelector("#mainpic");
+		const images = document.querySelectorAll(".smallpic");
+
+		images.forEach(image => image.addEventListener("click", 
+			function(e) {
+				let clickedImage = e.target.src;
+				let swapImage = bigImage.src;
+				bigImage.src = clickedImage;
+				e.target.src = swapImage;
+			}
+			));
+	</script>
+</body>
+</html>
